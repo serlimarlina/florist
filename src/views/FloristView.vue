@@ -8,7 +8,7 @@
         <a aria-current="page" href="/" class="router-link-active router-link-exact-active cursor-pointer">
           <img src="../assets/logo.png" alt="/" class="w-32 h-auto"></a>
         <div class="gap-11 items-center justify-center text-sm lg:flex hidden">
-          <a v-for="category in categories" href="/" class="font-sans text-black-300 hover:opacity-10">{{ category.name }}</a>
+          <a v-for="container in containers" href="/" class="font-sans text-black-300 hover:opacity-10">{{ container.name }}</a>
         </div> 
         <div class="flex gap-10">
           <a href="/" class="cursor-pointer hover:opacity-50"><i class="bi bi-search text-dark text-xl"></i></a>
@@ -39,17 +39,17 @@
     </div>
   </section>
   <section class="mx-24 my-20">
-    <div class="text-center text-2xl mb-10">Kategori Produk</div>
+    <div class="text-center text-2xl mb-10">Product category</div>
     <div class="w-[100px] md:w-full overflow-x-auto">
       <div class="flex w-full text-center">
-        <a v-for="(category, index) in categories" :key="index"  href="/" :class="getBackgroundClass(index)" class="text-lg bg-indigo-300 lg:p-10 p-8 flex lg:w-full w-32 justify-center items-center hover:opacity-50">{{ category.name }}</a>
+        <a v-for="(container, index) in containers" :key="index"  href="/" :class="getBackgroundClass(index)" class="text-lg bg-indigo-300 lg:p-10 p-8 flex lg:w-full w-32 justify-center items-center hover:opacity-50">{{ container.name }}</a>
       </div>
     </div>
   </section>
-  <section v-for="(category, catIndex) in categories" :key="catIndex" class="py-8 lg:py-16 lg:px-20 px-4 flex flex-col gap-10">
-    <div class="text-center w-full text-xl text-dark">{{ category.name }}</div>
+  <section v-for="(container, index) in containers" :key="container.index" class="py-8 lg:py-16 lg:px-20 px-4 flex flex-col gap-10">
+    <div class="text-center w-full text-xl text-dark">{{ container.name }}</div>
       <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
-      <div v-for="(product, prodIndex) in category.products" :key="prodIndex" :class="{'hidden lg:block': prodIndex === 4}">
+      <div v-for="(product, index) in container.products" :key="product.index" :class="{'hidden lg:block': product.index === 4}">
         <img :src="product.image" :alt="product.name" class="cursor-pointer hover:opacity-70 w-full h-56 object-cover image-lazy pulse" lazy="loaded">
           <div class="bg-indigo-200 w-full p-4">
             <div class="mb-1">{{ product.name }}</div>
@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-    </div><div class="text-center hover:opacity-50"><a href="/">Lihat Semuanya</a></div>
+    </div><div class="text-center hover:opacity-50"><a href="/">See All Product</a></div>
   </section>
   <section class="mx-24 my-20">
     <div class="text-xl font-bold mb-6">Aurora Florist - online flower shop based in Indonesia</div>
@@ -107,7 +107,7 @@
         <img src="../assets/logo.png" alt="logo" class="w-52 h-auto"></div>
       <div class="grid grid-rows-1 grid-flow-col gap-4 justify-between text-black my-10">
         <div><p class="text-xl text-bold mb-5">Address</p><p class="text-lg">Cianjur, Jawa Barat</p></div>
-        <div><p class="text-xl text-semibold mb-5">Product Categorys</p><p v-for="category in categories"  class="text-lg">{{ category.name }}</p></div>
+        <div><p class="text-xl text-semibold mb-5">Product category</p><p v-for="container in containers"  class="text-lg">{{ container.name }}</p></div>
         <div><p class="text-xl text-semibold mb-5">customer Care</p><p class="text-lg">+62 123 456 78</p><p class="text-lg">minceu@florist.com</p></div>
       </div>
       <div class="w-full text-center text-black text-xs"> © 2024 Aurora Florist All rights reserved </div>
@@ -118,7 +118,7 @@
 <script setup>
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { ref, reactive } from 'vue';
-const categories = reactive([
+const containers = reactive([
   {
     name: 'Flower Bouquet',
     products: [
