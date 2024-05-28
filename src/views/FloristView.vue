@@ -65,7 +65,7 @@
     </section>
     <section class="mx-4 lg:mx-24 my-20">
       <div class="text-xl font-bold mb-6">Aurora Florist - Online Flower Shop Based in Indonesia</div>
-      <div class="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, quisquam magnam fugiat quidem quasi excepturi quam alias quos nihil soluta, eos ab consequatur atque quia reiciendis ut adipisci, suscipit itaque?</div>
+      <div class="text-lg">Aurora Florist is a premier flower shop located in Indonesia, offering a delightful array of fresh blooms and floral arrangements to brighten any occasion. Situated amidst the lush landscapes of Indonesia, our shop is dedicated to providing exquisite floral designs crafted with passion and creativity.</div>
     </section>
     <section class="bg-[url('src/assets/bg-1.jpg')] py-10">
       <div class="text-2xl text-center py-10">
@@ -106,7 +106,7 @@
       <div class="bg-indigo-300 py-10 px-4 lg:px-20">
         <div class="flex items-center text-2xl font-bold uppercase text-black"><img src="../assets/logo.png" alt="logo" class="w-32 lg:w-52 h-auto"></div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-between text-black my-10">
-          <div><p class="text-xl font-bold mb-5">Address</p><p class="text-lg">Cianjur, Jawa Barat</p></div>
+          <div><p class="text-xl font-bold mb-5">Address</p><p class="text-lg">Cibakung, Jawa Barat</p></div>
           <div><p class="text-xl font-semibold mb-5">Product Category</p><p v-for="container in containers" class="text-lg">{{ container.name }}</p></div>
           <div><p class="text-xl font-semibold mb-5">Customer Care</p><p class="text-lg">+62 123 456 78</p><p class="text-lg">minceu@florist.com</p></div>
         </div>
@@ -182,15 +182,15 @@ const containers = reactive([
 ]);
 
 const testimonials = ref([
-  { id: 1, name: 'serlixyz', message: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.' },
-  { id: 2, name: 'serlixyz', message: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.' }
+  { id: 1, name: 'wildan', message: 'bgus bngt bjir, top markotop pokonamah' },
+  { id: 2, name: 'zavian', message: 'I ordered a bouquet of roses from Aurora Florist for my anniversary, and I was absolutely thrilled with the quality! The flowers were fresh, beautifully arranged, and lasted for over a week. Excellent service and timely delivery. Highly recommend!' }
 ]);
 
 const faqs = ref([
-  { id: 1, question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit?' },
-  { id: 2, question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit?' },
-  { id: 3, question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit?' },
-  { id: 4, question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit?' }
+  { id: 1, question: 'Do you deliver internationally?' },
+  { id: 2, question: 'Do you offer same-day delivery?' },
+  { id: 3, question: 'Can I customize my flower arrangement?' },
+  { id: 4, question: 'What types of flowers do you offer?' }
 ]);
 
 function getBackgroundClass(index) {
